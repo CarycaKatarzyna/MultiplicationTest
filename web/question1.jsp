@@ -10,10 +10,15 @@
     <head>
         <title>  Question  </title>
     </head> 
-    <body>
-        <h1> <script> document.write("Question "+ sessionStorage.getItem("number")); </script> </h1>
-        <p>  <% out.println(mult.getFirst() + "*" + mult.getSecond());%> </p>
+       <body onload="blockBack();" onunload="">
+        <body style="background-color:99FF99; color:006666;">
+        <h1 style="text-align:center; color:006666;"> <script> document.write("Question "+ sessionStorage.getItem("number")); </script> </h1>
+        <p style="text-align:center; color:006666;">  <% out.println(mult.getFirst() + "*" + mult.getSecond());%> </p>
         <script>
+        window.history.forward();
+        function blockBack() {
+            window.history.forward();
+        }
         function enable() {
             var query = document.querySelector('input[type=\"submit\"]');
             query.removeAttribute('disabled');
@@ -41,20 +46,20 @@
         <% 
             int j=0; 
             for(Integer i : mult.getAnswers()){
-                out.println("<input type=\"radio\" onchange=\'enable()\' name=\"answer\"  id=\"radioId\" value="+ j +">" + i +"<br>");
+                out.println("<center><input type=\"radio\" onchange=\'enable()\' name=\"answer\"  id=\"radioId\" value="+ j +">" + i +"<br>"+"</center>");
                 j++;
             }
         %>
         </form>
         <script>
             if(parseInt(sessionStorage.getItem("number")) < 5){
-                document.write("<form action = \"question1.jsp\" >");
+                document.write("<center><form action = \"question1.jsp\" >");
             }
             else{
-                document.write("<form action = \"result.jsp\" method = \"POST\">");
+                document.write("<center><form action = \"result.jsp\" method = \"POST\">");
             }
         </script>
-            <input type = "submit" onclick ='checkAnswer()' disabled="disabled" name = "button" value = "NEXT" />
+            <input type = "submit" onclick ='checkAnswer()' disabled="disabled" name = "button" value = "NEXT" /></center>
         </form>
     </body>
 </html>

@@ -10,10 +10,16 @@
     <head>
         <title>  Question </title>
     </head> 
-    <body>
+    <body><center>
+        <body onload="blockBack();" onunload="">
+        <body style="background-color:99FF99; color:006666;">
         <h1> <script> document.write("Question "+ sessionStorage.getItem("number")); </script>  </h1>
         <p>  <% out.println(mult.getFirst() + "*" + mult.getSecond());%> </p>
-        <script>
+        <script>        
+        window.history.forward();
+        function blockBack() {
+            window.history.forward();
+        }
         var Timer;
         var seconds;
 
@@ -97,6 +103,6 @@
         <p1> Time limit: </p1>
         <div id='timer' />
         <script> window.onload = CreateTimer("timer", 5);</script>
-        </form>
+    </form></center>
     </body>
 </html>
