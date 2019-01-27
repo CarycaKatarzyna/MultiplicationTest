@@ -4,3 +4,5 @@
 3. ./$GLASSFISH_PATH$/glassfish1/bin/asadmin start-domain
 4. Go to http://localhost:8080/MultiplicationTest/
 5. ./$GLASSFISH_PATH$/glassfish1/bin/asadmin stop-domain
+
+Or try use Netbeans IDE
